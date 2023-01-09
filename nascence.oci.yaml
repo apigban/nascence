@@ -1,0 +1,5 @@
+plugin: oracle.oci.oci
+
+# Optional fields to specify oci connection config:
+config_file: secrets/oci.config
+config_profile: DEFAULT
