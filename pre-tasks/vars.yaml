@@ -1,0 +1,7 @@
+---
+# Oraclecloud terraformstate object store backend
+object_store:
+  tfstate:
+    bucket:
+      namespace: axafm68tcvts
+      name: terraformstate

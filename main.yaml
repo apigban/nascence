@@ -1,0 +1,8 @@
+---
+- hosts: localhost
+  gather_facts: false
+
+  tasks:
+  - name: Pre-tasks before configuration
+    ansible.builtin.include_tasks:
+      file: "pre-tasks/pull_oci_instance_key.yaml"
