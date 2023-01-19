@@ -12,8 +12,5 @@
   remote_user: "{{ user.remote.name }}"
 
   tasks:
-    - name: Include variables
-      ansible.builtin.include_vars: tasks/vars.yaml
-    - name: say hello
-      debug:
-        msg: Hello from {{ hello_message }}
+    - name: Modify kernel parameters
+      ansible.builtin.include_tasks: tasks/kernel/net-forwarding.yaml
