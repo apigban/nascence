@@ -1,3 +1,4 @@
+---
 plugin: oracle.oci.oci
 
 # Optional fields to specify oci connection config:

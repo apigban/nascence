@@ -1,0 +1,16 @@
+---
+- name: Include variables
+  ansible.builtin.include_vars: vars.yaml
+
+- name: Download oci instance keys to be used by playbook executor
+  oracle.oci.oci_object_storage_object:
+    namespace_name: "{{ object_store.tfstate.bucket.namespace }}"
+    bucket_name: "{{ object_store.tfstate.bucket.name }}"
+    object_name: valence/oci.privkey
+
+    dest: "{{ playbook_dir }}/secrets/oci.privkey"
+
+- name: Change file ownership, group and permissions
+  ansible.builtin.file:
+    path: "{{ playbook_dir }}/secrets/oci.privkey"
+    mode: '0600'
