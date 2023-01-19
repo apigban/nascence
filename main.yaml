@@ -10,7 +10,10 @@
 
 - hosts: apigban
   remote_user: "{{ user.remote.name }}"
+  become: true
 
   tasks:
     - name: Modify kernel parameters
       ansible.builtin.include_tasks: tasks/kernel/net-forwarding.yaml
+    - name: Update, upgrade, install packages
+      ansible.builtin.include_tasks: tasks/packages/packages.yaml
