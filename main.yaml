@@ -6,3 +6,14 @@
   - name: Pre-tasks before configuration
     ansible.builtin.include_tasks:
       file: "pre-tasks/pull_oci_instance_key.yaml"
+
+
+- hosts: apigban
+  remote_user: "{{ user.remote.name }}"
+
+  tasks:
+  - name: Include variables
+    ansible.builtin.include_vars: tasks/vars.yaml
+  - name: say hello
+    debug:
+      msg: Hello from {{ hello_message }}
