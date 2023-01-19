@@ -4,8 +4,11 @@
   hosts: localhost
 
   tasks:
-    - name: Collect network load balancer facts 
+    - name: Collect network load balancer facts
       oracle.oci.oci_network_load_balancer_facts:
+      # TODO:
+      # get_lb/get_lb_facts.yaml
+      # 9:81      error    line too long (105 > 80 characters)  (line-length)
         compartment_id: "ocid1.tenancy.oc1..aaaaaaaaipm6e6bhsol6qkuugxdwei7feglsr6yjlre37aajwb5v3murqqxa"
       register: networkLB
 
