@@ -2,3 +2,4 @@ secrets/ansible-privkey.pem
 secrets/oci.config
 ansible/*
 secrets/*.privkey
+secrets/*.pubkey
